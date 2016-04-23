@@ -589,7 +589,7 @@ ngLyricsPlayer.directive('ngLyricsPlayer', ['$timeout', 'ngLyricsPlayerConfig', 
             
       $(".scrollable").scroll(function(e) {
           isScolling = true;
-         setTimeout(function(){isScolling = false;}, 300);
+         $timeout(function(){isScolling = false;}, 1000);
       });
 
       function scrollToTime(currentTime) {
@@ -621,7 +621,7 @@ ngLyricsPlayer.directive('ngLyricsPlayer', ['$timeout', 'ngLyricsPlayerConfig', 
           
           if(item.from) {
               player.audio.currentTime = item.from;
-              player.audio.play();
+              $scope.play();
           }
           
           highlight(target);
