@@ -82,8 +82,15 @@ a.lyrics-line:hover {
 }
 
 /*-------------- controles --------*/
-.playpause {
+.playpause, .playpause:focus, .playpause:hover {
+    background: transparent;
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0px 0px 5px #fff;
+}
 
+.playpause path {
+    fill: #fff;
 }
 
 .progess progress {
@@ -94,13 +101,15 @@ a.lyrics-line:hover {
 }
 
 .progess progress[value]::-webkit-progress-bar {
-  background: transparent;
-  border: 1px solid #fff;
+  background: rgba(0,0,0,0.3);
   border-radius: 3px;
 }
 
 .progess progress[value]::-webkit-progress-value {
-     background: #fff;
+    background: #fff;
+    -moz-box-shadow: 0 0 5px #fff;
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0px 0px 5px #fff;
 }
 
 /*---------------------- animation -------*/
