@@ -468,7 +468,7 @@ ngLyricsPlayer.directive('ngLyricsPlayer', ['$timeout', 'ngLyricsPlayerConfig', 
     link: function($scope, $elem, $attrs) {
       
       var isScolling = false;
-      var currentIndex = 0;
+      $scope.currentIndex = -1; // inital value, as there is no current index
 
       var src = $attrs.ngLyricsPlayer;
       $scope.player = player;
@@ -593,11 +593,10 @@ ngLyricsPlayer.directive('ngLyricsPlayer', ['$timeout', 'ngLyricsPlayerConfig', 
       });
 
       function scrollToTime(currentTime) {
-          currentTime = currentTime.toFixed(2);
           $.each($scope.lyricsLines, function (idx, line) {
             if(currentTime >= line.from && currentTime <= line.to) {
-              // avoid wrong highlighting
-              if(currentIndex !== idx) {
+              // redundant highlighting
+              if($scope.currentIndex !== idx) {
                   scrollToItemByIndex(idx);
               }
               return false;
@@ -606,7 +605,7 @@ ngLyricsPlayer.directive('ngLyricsPlayer', ['$timeout', 'ngLyricsPlayerConfig', 
       }
 
       function scrollToItemByIndex (idx) {
-          currentIndex = idx;
+          $scope.currentIndex = idx;
           var target = $(".lyrics-content a.lyrics-line").eq(idx);
           var parent = $(".lyrics-content");
           
