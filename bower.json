@@ -1,0 +1,26 @@
+{
+  "name": "ng-lyrics-player",
+  "authors": [
+    "armia <armia.net@gmail.com>"
+  ],
+  "description": "Angular directive for SoundCloud lyrics player",
+  "main": "index.html",
+  "keywords": [
+    "Deezer",
+    "lyrics",
+    "SoundCloud"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3",
+    "bootstrap": "^3.3.6",
+    "angular-animate": "^1.5.3"
+  }
+}

@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    background-color: #F7F7F7;
+     padding-top: 70px;
+     font-family: 'Open Sans', sans-serif;
+}
+
+div.lyrics-panel {
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-size: cover;
+    color:#fff;
+    font-size: 24px;
+}
+
+div.panel-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+    padding: 10px;
+}
+div.panel-header span {
+    display: block;
+}
+
+span.singer-name {
+    color:#C2C2CA;
+    font-size: 18px;
+}
+
+div.lyrics-wrapper {
+    clear:both;
+}
+
+div.lyrics-content {
+    text-align: center;
+}
+
+ul.lyrics-content {
+    list-style-type: none;
+    height: 500px;
+    overflow-y: scroll;
+    
+}
+
+ul.lyrics-content li {
+    margin:40px;
+    line-height: 70px;
+}
+
+a.lyrics-line {
+    padding:17px 60px;
+    color:#fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.lyrics-line:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.lyrics-line.highlighted {
+    color:#000;
+    background-color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+/*-------------- scroll bar --------*/
+.scrollable::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 3px;
+}
+
+.scrollable::-webkit-scrollbar {
+	width: 3px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #fff;
+}
+
+/*-------------- controles --------*/
+.playpause {
+
+}
+
+.progess progress {
+    background: #6f5499;
+    width:90%;
+    height:10px;
+    margin-top: 20px;
+}
+
+.progess progress[value]::-webkit-progress-bar {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.progess progress[value]::-webkit-progress-value {
+     background: #fff;
+}
+
+/*---------------------- animation -------*/
+.lyrics-line {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}

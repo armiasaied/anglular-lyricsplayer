@@ -1,0 +1,34 @@
+<div class="panel panel-default lyrics-panel" style="background: #6f5499;">
+    <div class="panel-header">
+        <span class="song-details">
+           {{title}}
+        </span>
+        <span class="singer-name">
+            {{artist}}
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="lyrics-wrapper">
+            <div class="lyrics-loader"></div>
+            <ul class="lyrics-content scrollable" role="marquee">
+                <li ng-repeat="line in lyricsLines track by $index" ng-click="scrollTo($index, $event)"><a class="lyrics-line">{{line.content}}</a></li>
+            </ul>
+        </div>
+        <div class="controles">
+          <button ng-click="playPause()"
+          title="Play/Pause"
+          class="btn btn-default pull-left playpause">
+          <svg ng-if="player.playing !== track.src" class="icon geomicon" data-icon="play" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor"><path d="M4 4 L28 16 L4 28 z "></path></svg>
+          <svg ng-if="player.playing === track.src" class="icon geomicon" data-icon="pause" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z "></path></svg>
+        </button>
+        <div class="progess">
+            <progress
+            class=""
+            ng-click="seek($event)"
+            ng-value="currentTime / duration || 0">
+            {{ currentTime / duration }}
+          </progress>
+        </div>
+      </div>
+    </div>
+</div>
