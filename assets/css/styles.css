@@ -39,8 +39,7 @@ div.lyrics-content {
 ul.lyrics-content {
     list-style-type: none;
     height: 500px;
-    overflow-y: scroll;
-    
+    overflow-y: scroll; 
 }
 
 ul.lyrics-content li {
@@ -49,20 +48,23 @@ ul.lyrics-content li {
 }
 
 a.lyrics-line {
-    padding:17px 60px;
+    padding:17px 0;
     color:#fff;
     cursor: pointer;
     text-decoration: none;
+    box-shadow: 10px 0 0 transparent, -10px 0 0 transparent;
 }
 
 a.lyrics-line:hover {
     background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 10px 0 0 rgba(255, 255, 255, 0.2), -10px 0 0 rgba(255, 255, 255, 0.2);
 }
 
-.lyrics-line.highlighted {
+a.lyrics-line.highlighted {
     color:#000;
-    background-color: rgba(255, 255, 255, 1);
     font-weight: bold;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 10px 0 0 rgba(255, 255, 255, 1), -10px 0 0 rgba(255, 255, 255, 1);
 }
 
 /*-------------- scroll bar --------*/
@@ -113,7 +115,7 @@ a.lyrics-line:hover {
 }
 
 /*---------------------- animation -------*/
-.lyrics-line {
+a.lyrics-line {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
